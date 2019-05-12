@@ -8,6 +8,8 @@ const { PORT } = process.env
 
 const indexRoutes = require('./routes/index')
 
+app.set('view engine', 'ejs')
+
 app.use(indexRoutes)
 
 app.listen(PORT, () => console.log(`Listening on port ${ PORT }.`))

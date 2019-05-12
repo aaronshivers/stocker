@@ -1,0 +1,29 @@
+<% include partials/top %>
+
+<div class="container">
+  
+  <h1 class="text-center">Stocker</h1>
+
+  <% for (const property in metaData) { %>
+
+  <p><%= `${ property }: ${ metaData[property] }` %></p>
+
+  <% } %>
+
+  <% for (const prop in timeSeries) { %>
+
+    <% if (timeSeries.hasOwnProperty(prop)) { %>
+
+      <% for (const p in timeSeries[prop]) { %>
+
+        <p><%= `${ prop } ${ p } ${ timeSeries[prop][p] }` %></p>
+
+      <% } %>
+
+    <% } %>
+
+  <% } %>
+
+</div>
+
+<% include partials/bottom %>
