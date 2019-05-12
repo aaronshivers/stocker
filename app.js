@@ -1,11 +1,14 @@
 require('dotenv').config()
 
 const express = require('express')
+const fetch = require('node-fetch')
 
 const app = express()
 const { PORT } = process.env
 
-app.get('/', (req, res) => res.send('Hi there'))
+const indexRoutes = require('./routes/index')
+
+app.use(indexRoutes)
 
 app.listen(PORT, () => console.log(`Listening on port ${ PORT }.`))
 
